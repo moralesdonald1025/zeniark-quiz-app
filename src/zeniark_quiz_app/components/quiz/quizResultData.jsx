@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaCheck } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 
 const QuizResultData = ({ questionData, index, userAnswers }) => {
-    const { category, question, correct_answer } = questionData;
-    const [isCorrect, setIsCorrect] = useState(true)
+    const { question, correct_answer } = questionData;
     const isUserAnswerCorrect = userAnswers[index] === correct_answer;
 
     return (
