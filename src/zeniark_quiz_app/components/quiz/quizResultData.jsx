@@ -12,7 +12,7 @@ const QuizResultData = ({ questionData, index, userAnswers }) => {
             <div>
                 <div className="question-container">
                     <p>{index + 1}. </p>
-                    <p>{question}</p>
+                    <p className="question-from-result"> {question}</p>
                 </div>
                 <div className="answers-container">
                     <p>The correct answer is <span className={correct_answer === 'True' ? 'answer-true' : 'answer-false'}>{correct_answer}.  </span><span>You answered <span className={userAnswers[index] !== 'True' ? 'user-false' : 'user-true'}>{userAnswers[index]}.</span></span></p>
