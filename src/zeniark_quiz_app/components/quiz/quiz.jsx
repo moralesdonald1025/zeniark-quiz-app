@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./styles/quiz.css";
-import { data } from "../../../mock_data/data"
 import logo from '../../../images/logo.png';
 import { FaCheck } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
@@ -9,17 +8,20 @@ import QuizQuestion from "./quizQuestion";
 const Quiz = () => {
 
     let [index, setIndex] = useState(0);
-    //////
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [userAnswers, setUserAnswers] = useState({});
     const [questionsData, setQuestionsData] = useState([{}]);
 
+
+    ///fetch my data on my newly created API
     useEffect(() => {
         fetch("https://zeniark-quiz-app-api.onrender.com/zeniark-quiz-data")
         .then((res) => res.json())
         .then((json) => setQuestionsData(json));
     }, []);
 
+
+    /// functions that handles the user's answers
     const handleAnswer = (answer) => {
         setUserAnswers({ ...userAnswers, [currentQuestion]: answer });
         setCurrentQuestion(currentQuestion + 1);
