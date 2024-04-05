@@ -24,7 +24,8 @@
     line-height: 16.94px;
     letter-spacing: 0.005em;
     text-align: left;
-
+    margin-left: 20px;;
+    margin-top: 10px !important;
 }
 
 /* button */
